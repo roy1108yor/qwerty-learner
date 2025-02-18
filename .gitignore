@@ -35,3 +35,8 @@ stats.html
 /blob-report/
 /playwright/.cache/
 playwright-report
+
+# Clacky-specific files
+.1024*
+!.1024
+.breakpoints
