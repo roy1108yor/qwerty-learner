@@ -35,6 +35,7 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
   // eslint-disable-next-line  @typescript-eslint/no-non-null-assertion
   const { state, dispatch } = useContext(TypingContext)!
   const [wordState, setWordState] = useImmer<WordState>(structuredClone(initialWordState))
+  const [showAnswer, setShowAnswer] = useState(false)
 
   const wordDictationConfig = useAtomValue(wordDictationConfigAtom)
   const isTextSelectable = useAtomValue(isTextSelectableAtom)
@@ -49,7 +50,7 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
   const currentLanguageCategory = useAtomValue(currentDictInfoAtom).languageCategory
   const currentChapter = useAtomValue(currentChapterAtom)
 
-  const [showTipAlert, setShowTipAlert] = useState(false)
+  const [showTipAlert, setShowTipAlert] = useState<boolean>(false)
   const wordPronunciationIconRef = useRef<WordPronunciationIconRef>(null)
 
   useEffect(() => {
@@ -69,6 +70,7 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
     newWordState.startTime = getUtcStringForMixpanel()
     newWordState.randomLetterVisible = headword.split('').map(() => Math.random() > 0.4)
     setWordState(newWordState)
+    setShowAnswer(false)
   }, [word, setWordState])
 
   const updateInput = useCallback(
@@ -136,6 +138,9 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
 
   const getLetterVisible = useCallback(
     (index: number) => {
+      if (showAnswer) {
+        return true
+      }
       if (wordState.letterStates[index] === 'correct' || (isShowAnswerOnHover && isHoveringWord)) return true
 
       if (wordDictationConfig.isOpen) {
@@ -162,6 +167,7 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
       wordState.displayWord,
       wordState.letterStates,
       wordState.randomLetterVisible,
+      showAnswer,
     ],
   )
 
@@ -227,8 +233,9 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
         dispatch({ type: TypingStateActionType.REPORT_WRONG_WORD, payload: { letterMistake: currentState.letterMistake } })
       })
 
-      if (currentChapter === 0 && state.chapterData.index === 0 && wordState.wrongCount >= 3) {
+      if (wordState.wrongCount >= 3) {
         setShowTipAlert(true)
+        setShowAnswer(true)
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -312,7 +319,7 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
           )}
         </div>
       </div>
-      <TipAlert className="fixed bottom-10 right-3" show={showTipAlert} setShow={setShowTipAlert} />
+      <TipAlert className="fixed bottom-10 right-3" show={showTipAlert} setShow={setShowTipAlert} wrongCount={wordState.wrongCount} />
     </>
   )
 }
