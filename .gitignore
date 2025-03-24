@@ -35,10 +35,5 @@ stats.html
 /playwright/.cache/
 playwright-report
 
-# Clacky-related configuration
-.1024*
-!.1024
-.breakpoints
-
 # Framework-related files
 /dist/
