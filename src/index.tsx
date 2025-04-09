@@ -25,6 +25,12 @@ if (process.env.NODE_ENV === 'production') {
   mixpanel.init('5474177127e4767124c123b2d7846e2a', { debug: true })
 }
 
+// 应用程序启动日志，帮助调试
+console.log('应用程序启动', {
+  env: process.env.NODE_ENV,
+  deployEnv: typeof REACT_APP_DEPLOY_ENV !== 'undefined' ? REACT_APP_DEPLOY_ENV : 'undefined',
+})
+
 function Root() {
   const darkMode = useAtomValue(isOpenDarkModeAtom)
   useEffect(() => {
@@ -48,7 +54,7 @@ function Root() {
 
   return (
     <React.StrictMode>
-      <BrowserRouter basename={REACT_APP_DEPLOY_ENV === 'pages' ? '/qwerty-learner' : ''}>
+      <BrowserRouter basename={typeof REACT_APP_DEPLOY_ENV !== 'undefined' && REACT_APP_DEPLOY_ENV === 'pages' ? '/qwerty-learner' : ''}>
         <Suspense fallback={<Loading />}>
           <Routes>
             {isMobile ? (

@@ -2,6 +2,7 @@ import { TypingContext, TypingStateActionType } from '../../store'
 import type { TypingState } from '../../store/type'
 import PrevAndNextWord from '../PrevAndNextWord'
 import Progress from '../Progress'
+import ExampleSentence from './components/ExampleSentence'
 import Phonetic from './components/Phonetic'
 import Translation from './components/Translation'
 import WordComponent from './components/Word'
@@ -121,9 +122,11 @@ export default function WordPanel() {
     { preventDefault: true },
   )
   const [isShowTranslation, setIsHoveringTranslation] = useState(false)
+  const [isShowExample, setIsHoveringExample] = useState(false)
 
   const handleShowTranslation = useCallback((checked: boolean) => {
     setIsHoveringTranslation(checked)
+    setIsHoveringExample(checked)
   }, [])
 
   useHotkeys(
@@ -176,6 +179,12 @@ export default function WordPanel() {
               <Translation
                 trans={currentWord.trans.join('；')}
                 showTrans={shouldShowTranslation}
+                onMouseEnter={() => handleShowTranslation(true)}
+                onMouseLeave={() => handleShowTranslation(false)}
+              />
+              <ExampleSentence
+                example={currentWord.example}
+                showExample={shouldShowTranslation}
                 onMouseEnter={() => handleShowTranslation(true)}
                 onMouseLeave={() => handleShowTranslation(false)}
               />

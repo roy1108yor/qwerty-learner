@@ -3,6 +3,6 @@
 # For more information, please refer to the documentation: https://docs.clacky.ai/clacky-workspace/configure
 
 # Commands to run when "Run" button clicked
-run_commands: ['yarn dev', 'cd src-tauri && cargo run']
+run_commands: ['yarn dev']
 # Command to install or update dependencies, will execute each time a new thread created to ensure dependencies up-to-date
 dependency_command: yarn install && cd src-tauri && cargo build
