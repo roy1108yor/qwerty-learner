@@ -5,7 +5,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#6366f1',
+        // quick thread提交
+        primary: '#ef4444',
+        // quick thread提交
       },
       keyframes: {
         'accordion-down': {
