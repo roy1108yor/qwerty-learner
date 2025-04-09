@@ -25,6 +25,8 @@ export type Word = {
   usphone: string
   ukphone: string
   notation?: string
+  /** 单词的示例句子 */
+  examples?: string[]
 }
 
 export type WordWithIndex = Word & {

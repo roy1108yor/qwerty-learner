@@ -2,6 +2,7 @@ import { TypingContext, TypingStateActionType } from '../../store'
 import type { TypingState } from '../../store/type'
 import PrevAndNextWord from '../PrevAndNextWord'
 import Progress from '../Progress'
+import ExampleSentence from './components/ExampleSentence'
 import Phonetic from './components/Phonetic'
 import Translation from './components/Translation'
 import WordComponent from './components/Word'
@@ -173,6 +174,7 @@ export default function WordPanel() {
             <div className="relative">
               <WordComponent word={currentWord} onFinish={onFinish} key={wordComponentKey} />
               {phoneticConfig.isOpen && <Phonetic word={currentWord} />}
+              <ExampleSentence word={currentWord} />
               <Translation
                 trans={currentWord.trans.join('；')}
                 showTrans={shouldShowTranslation}
