@@ -51,3 +51,45 @@ playwright-report
 *.sublime-*
 *.swp
 *.swo
+# Clacky-related configuration
+.1024*
+!.1024
+.breakpoints
+
+# Language-specific files
+*.log
+*.tsbuildinfo
+.eslintcache
+
+# Build outputs
+/dist
+/build
+
+# Environment and local settings
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+stats.html
+
+# Editor specific files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.sublime-*
+*.swp
+*.swo
+.DS_Store
+
+# Cache directories
+.cache/
+.temp/
+.parcel-cache/
+
+# TypeScript incremental compilation cache
+*.tsbuildinfo
+
+# Playwright test outputs
+/test-results/
+/blob-report/
+/playwright-report/
