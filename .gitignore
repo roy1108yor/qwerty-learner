@@ -38,10 +38,6 @@ playwright-report
 # Framework-related files
 /dist/
 
-# Clacky-related configuration
-.1024*
-!.1024
-.breakpoints
 
 # Rust / Tauri specific
 /src-tauri/target/
