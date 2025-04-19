@@ -20,8 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  // quick thread提交
   "theme_color": "#ef4444",
-  // quick thread提交
   "background_color": "#ffffff"
 }
