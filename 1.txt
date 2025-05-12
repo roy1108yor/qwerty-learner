@@ -1,3 +1,11 @@
 
 This is a test file created for the Clacky development environment setup process.
 2222222222
+issue thread ,333333
+44444取消勾选后commit
+555555commit提交中编辑用户名
+666666取消勾选，清空用户名和邮箱
+77777
+88888
+999
+101010
