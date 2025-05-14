@@ -1,0 +1,16 @@
+成员点击commit
+
+GitHub协作人修改头像后commit
+
+终端commit添加一个协作人
+ziyu@dao42.com
+
+终端commit添加2个协作人
+ziyu@dao42.com、zhuangzhuang@dao42.com
+
+继续终端提交提交2个协作人22222222222222
+
+
+终端提交不添加协作人
+
+  
