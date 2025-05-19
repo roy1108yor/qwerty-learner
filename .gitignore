@@ -51,10 +51,7 @@ playwright-report
 *.sublime-*
 *.swp
 *.swo
-# Clacky-related configuration
-.1024*
-!.1024
-.breakpoints
+
 
 # Language-specific files
 *.log
