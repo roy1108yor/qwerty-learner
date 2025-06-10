@@ -26,6 +26,7 @@ const ErrorRow: FC<IErrorRowProps> = ({ record, onDelete, onWordUpdate }) => {
   const onClick = useCallback(() => {
     setCurrentRowDetail(record)
     recordErrorBookAction('detail')
+    console.log(undefinedVariable);
   }, [record, setCurrentRowDetail])
 
   useEffect(() => {
