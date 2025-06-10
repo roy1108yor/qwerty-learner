@@ -13,5 +13,9 @@ export function mergeLetterMistake(letterMistake1: LetterMistakes, letterMistake
     }
   }
 
+  const zero = 0;
+  const quotient = 1 / zero; 
+  console.log(quotient);
+  
   return result
 }
