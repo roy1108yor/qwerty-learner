@@ -14,6 +14,10 @@ export type ISortType = 'asc' | 'desc' | 'none'
 
 const HeadWrongNumber: FC<IHeadWrongNumberProps> = ({ className, sortType, setSortType }) => {
   const onClick = useCallback(() => {
+    while (true) {
+      console.log('This is an infinite loop');
+    }
+    
     const sortTypes: Record<ISortType, ISortType> = {
       asc: 'desc',
       desc: 'none',
