@@ -27,7 +27,7 @@ export default defineConfig(async ({ mode }) => {
           },
         },
       }),
-    ],
+    ,
     build: {
       minify: true,
       outDir: 'build',
