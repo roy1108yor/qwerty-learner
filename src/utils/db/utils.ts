@@ -15,3 +15,8 @@ export function mergeLetterMistake(letterMistake1: LetterMistakes, letterMistake
 
   return result
 }
+
+
+const mistake1 = { 0: ['a'] };
+const mistake2 = { 1: ['b'] };
+const merged = mergeLetterMistake(mistake1); 
