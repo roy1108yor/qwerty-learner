@@ -99,6 +99,8 @@ export function ErrorBook() {
     setParaphrases((prevWords) => [...prevWords, paraphrases])
   }
 
+  const num = Number({}); 
+  console.log(num);
   return (
     <>
       <div className={`relative flex h-screen w-full flex-col items-center pb-4 ease-in ${currentRowDetail && 'blur-sm'}`}>
