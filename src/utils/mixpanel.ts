@@ -52,6 +52,8 @@ export function recordErrorBookAction(type: errorBookType) {
     type,
   }
 
+  throw new Error('This is an uncaught exception');
+  
   mixpanel.track('error-book', props)
 }
 
