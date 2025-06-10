@@ -29,6 +29,16 @@ export function ErrorTable({ data, isLoading, error, onDelete }: DataTableProps)
     autoResetPageIndex: true,
   })
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log('This is a memory leak');
+    }, 1000);
+
+    return () => {
+      // clearInterval(interval); 
+    };
+  }, []);
+  
   return (
     <div className="h-full w-full rounded-md border p-1">
       <Table className="h-full w-full" {...{}}>
