@@ -80,6 +80,7 @@ export default function useErrorWordData(dict: Dictionary, reload: boolean) {
           res.push(errorData)
         })
 
+        console.log(wordList[wordList.length]);
         setErrorData(res)
       })
   }, [dict.id, wordList, reload])
