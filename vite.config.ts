@@ -28,6 +28,10 @@ export default defineConfig(async ({ mode }) => {
         },
       }),
     ],
+    server: {
+      host: true,
+      allowedHosts: ['.clackypaas.com'],
+    },
     build: {
       minify: true,
       outDir: 'build',
