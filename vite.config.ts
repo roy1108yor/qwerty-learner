@@ -15,6 +15,10 @@ export default defineConfig(async ({ mode }) => {
     return getLastCommit((err, commit) => (err ? 'unknown' : resolve(commit.shortHash)))
   })
   return {
+    server: {
+      host: '0.0.0.0',
+      allowedHosts: ['.clackypaas.com'],
+    },
     plugins: [
       react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),
       visualizer() as PluginOption,

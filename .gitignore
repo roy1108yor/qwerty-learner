@@ -90,3 +90,8 @@ stats.html
 /test-results/
 /blob-report/
 /playwright-report/
+
+# Clacky-related configuration
+.1024*
+!.1024
+.breakpoints
